@@ -1,0 +1,343 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color:transparent;
+    padding: 10px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1000;
+    color: #5f5d5d;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5f5d5d;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav li {
+    margin-right: 20px; /* Adjust spacing */
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: #5f5d5d;
+    font-weight: bold;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    margin-top: 80px; /* Adjust as needed */
+    text-align: center;
+}
+.filter-buttons a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.filter-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.filter-btn:hover {
+    background-color: #0056b3;
+}
+.carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: none;
+    position: relative;
+    text-align: left;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 220px;
+    left: 20px;
+    color: black;
+}
+
+.carousel-caption h1 {
+    font-size: 50px;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+.carousel-caption h3 {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+/* Product Grid */
+.container {
+   
+    padding: 20px;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    
+}
+
+.series {
+    display: none; /* Hide all series by default */
+}
+.product-grid:target .series {
+    display: none;
+}
+
+#x-series:target {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#y-series:target {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#v-series:target {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#t-series:target {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Fallback: If no target, display all */
+body:not(:has(:target)) .series {
+    display: block;
+}
+
+/* Ensuring the filter button remains highlighted */
+#all:target ~ .filter-buttons a[href="#all"],
+#x-series:target ~ .filter-buttons a[href="#x-series"],
+#y-series:target ~ .filter-buttons a[href="#y-series"],
+#v-series:target ~ .filter-buttons a[href="#v-series"],
+#t-series:target ~ .filter-buttons a[href="#t-series"] {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Default card styles */
+.card {
+    box-shadow: 15px 20px 20px rgba(0, 0, 0, 0.3), inset 4px 4px 10px white;
+    transition: 0.2s;
+    border: none;
+    overflow: hidden;
+    display: block;
+    flex:1 1 250px;
+    max-width: 300px;
+}
+
+.card:hover {
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3), inset -4px -4px 10px white;
+    transition: 0.2s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.about-us {
+    display: flex; /* Use Flexbox for horizontal layout */
+    align-items: center; /* Vertically center items */
+    gap: 20px; /* Space between image and text */
+}
+
+.about-image img {
+    width: 100%; /* Make image responsive */
+    max-width: 400px; /* Limit the maximum width of the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.about-text {
+    flex: 1; /* Allow text to take up the remaining space */
+}
+
+.about-text h1 {
+    margin-top: 0;
+}
+
+.about-text p {
+    line-height: 1.6; /* Improve readability */
+}
+
+/* Contact Page */
+.container-contact {
+    padding: 20px;
+    max-width: 600px; /* Adjust max-width as needed */
+    margin: 50px auto; /* Center container horizontally */
+    background-color: #f9f9f9; /* Optional: add a background color */
+    border-radius: 10px; /* Optional: add border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visual appeal */
+}
+
+.contact-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px; /* Adjust max-width as needed */
+    display: block;
+    margin: 0 auto 20px;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px; /* Increase padding for larger text fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px; /* Increase font size for better readability */
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 150px; /* Adjust height as needed */
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+.details {
+    display: none; /* Hide details by default */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+    
+}
+#x100-details:target,
+#x200-details:target,
+#y200e-details:target,
+#y17s-details:target,
+#v29-details:target,
+#v40-details:target,
+#t3lite-details:target,
+#t3x-details:target {
+    display: block;
+    margin-top: 20px;
+}
+
+
+.details:target {
+    display: block; /* Show the details when their ID is targeted */
+   
+}
+.details p {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.details a.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+}
